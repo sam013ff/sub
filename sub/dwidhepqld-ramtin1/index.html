@@ -1,4 +1,3 @@
-<!--dmxlc3M6Ly8zOTRmNjk4MS1hNzgyLTQ3NzktOWE4NS1lNmNmMjI5MzVkOTNAMTUyLjIzMy4zNS4yMjg6ODQ0Mz9zZWN1cml0eT10bHMmZW5jcnlwdGlvbj1ub25lJmluc2VjdXJlPTEmaG9zdD0lNDBQcm94eVZQTjExJmhlYWRlclR5cGU9bm9uZSZ0eXBlPXRjcCZhbGxvd0luc2VjdXJlPTEmc25pPWRlMS5mcm9tYmxhbmN3aXRobG92ZS5jb20jJUYwJTlGJTg3JUE5JUYwJTlGJTg3JUFBZHdpZGhlcHFsZC1yYW10aW4xJTIwbGV0cGl4-->
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -7,24 +6,19 @@
     <title>پنل کاربری LetPix</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Vazirmatn', sans-serif; }
-    </style>
+    <style>body { font-family: 'Vazirmatn', sans-serif; }</style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center p-4">
 
     <script>
-        // تنظیمات وضعیت کاربر توسط امیر
-        // true = فعال | false = غیرفعال
+        // وضعیت کاربر: true = فعال | false = غیرفعال
         const is_active = true; 
         
-        // کد سابسکریپشن خام (بدون رمزگذاری) برای نمایش به کاربر در پنل
+        // کانفیگ خام برای نمایش به مشتری
         const rawConfig = "vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.35.228:8443?security=tls&encryption=none&__other_parameters__";
     </script>
 
     <div class="w-full max-w-md bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 p-6 space-y-6">
-        
-        <!-- لوگو و هدر -->
         <div class="text-center space-y-2">
             <h1 class="text-2xl font-bold text-emerald-400 tracking-wide">LetPix VPN</h1>
             <p class="text-xs text-slate-400">پنل مدیریت و وضعیت اشتراک اختصاصی</p>
@@ -32,7 +26,6 @@
 
         <hr class="border-slate-700">
 
-        <!-- بخش وضعیت حساب -->
         <div class="flex items-center justify-between bg-slate-850 p-4 rounded-xl border border-slate-750">
             <span class="text-sm font-medium text-slate-300">وضعیت اتصال شما:</span>
             <div id="status-badge" class="px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 animate-pulse">
@@ -41,7 +34,6 @@
             </div>
         </div>
 
-        <!-- باکس نمایش کانفیگ -->
         <div class="space-y-2">
             <label class="text-xs font-medium text-slate-400 block">کانفیگ مستقیم (جهت کپی دستی):</label>
             <div class="relative bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center justify-between">
@@ -50,18 +42,12 @@
             </div>
         </div>
 
-        <!-- دکمه پشتیبانی تلگرام -->
         <a href="https://t.me/appmaker013" target="_blank" class="flex items-center justify-center gap-2 w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-lg hover:shadow-sky-500/20 text-sm cursor-pointer">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.62.15-.15 2.7-2.48 2.75-2.7.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.25-.02-.11.02-1.84 1.16-5.2 3.43-.49.34-.94.5-1.34.49-.45-.01-1.31-.25-1.95-.46-.78-.26-1.4-.4-1.35-.85.03-.24.36-.48.99-.74 3.86-1.68 6.44-2.78 7.73-3.31 3.67-1.53 4.44-1.8 4.94-1.8.11 0 .36.03.52.16.14.11.18.27.2.37-.01.07.01.21 0 .31z"/>
-            </svg>
             تمدید یا خرید کانفیگ جدید (@appmaker013)
         </a>
-
     </div>
 
     <script>
-        // اعمال وضعیت فعال/غیرفعال روی ظاهر پنل
         const statusBadge = document.getElementById('status-badge');
         const statusDot = document.getElementById('status-dot');
         const statusText = document.getElementById('status-text');
@@ -80,7 +66,6 @@
             configDisplay.innerText = "جهت دریافت کانفیگ جدید با پشتیبانی ارتباط برقرار کنید.";
         }
 
-        // تابع کپی کردن کانفیگ خرد
         function copyConfig() {
             if(!is_active) {
                 alert("اشتراک شما منقضی شده است!");
